@@ -15,6 +15,8 @@ fighter_cursor = fighters.find({})
 fighter_list_cur = list(fighter_cursor)
 # Converting to the JSON
 FighterData = dumps(fighter_list_cur, indent = 2)
+with open('src/data/fighterData.json', 'w', encoding='utf-8') as f:
+    json.dump(FighterData, f, ensure_ascii=False, indent=4)
 
 FighterStats = []
 for x in range(len(fighter_list_cur)):
@@ -141,5 +143,5 @@ for x in range(len(fighter_list_cur)):
     FighterStats.append(fighter)
 
 
-with open('src/data/fighterData.json', 'w', encoding='utf-8') as f:
+with open('src/data/fighterStats.json', 'w', encoding='utf-8') as f:
     json.dump(FighterStats, f, ensure_ascii=False, indent=4)
