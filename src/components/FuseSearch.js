@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 import React from "react";
 import Stats from "./Stats"
-import Scatter from "./Scatter"
+import ScatterAxis from "./ScatterAxis"
 
 export default function FuseSearch(props) {
     console.log(props)
@@ -172,7 +172,7 @@ export default function FuseSearch(props) {
     return (
       <div>
       <Stats key="Full Name" TopResult={TopResult} />
-      <Scatter AllStats={AllStats} TopResult={TopResult} />
+      <ScatterAxis AllStats={AllStats} TopResult={TopResult} />
       </div>
     )
       
