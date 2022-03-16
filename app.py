@@ -11,6 +11,14 @@ fighters = ufc_stats_db["fighters"]
 events = ufc_stats_db["events"]
 event_fights = ufc_stats_db["event_fights"]
 
+
+fight_cursor = fights.find({})
+fight_list_cur = list(fight_cursor)
+# Converting to the JSON
+fightData = dumps(fight_list_cur, indent = 2)
+with open('src/data/fightsData.json', 'w', encoding='utf-8') as f:
+    json.dump(fightData, f, ensure_ascii=False, indent=4)
+
 fighter_cursor = fighters.find({})
 fighter_list_cur = list(fighter_cursor)
 # Converting to the JSON

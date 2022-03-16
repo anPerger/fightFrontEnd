@@ -2,12 +2,17 @@ import Fuse from "fuse.js";
 import React from "react";
 import Stats from "./Stats"
 import ScatterAxis from "./ScatterAxis"
+import PastFights from "./PastFights";
 
 export default function FuseSearch(props) {
     console.log(props)
     // const FighterData = require('../data/fighterStats.json'); //(with path)
     const fighterString = require('../data/fighterData.json');
     const FighterData = JSON.parse(fighterString)
+
+    const fightString = require('../data/fightsData.json');
+    const FightsData = JSON.parse(fightString)
+    console.log(FightsData)
     // console.log(typeof(FighterData))
     // console.log(FighterData)
 
@@ -171,8 +176,9 @@ export default function FuseSearch(props) {
    
     return (
       <div>
-      <Stats key="Full Name" TopResult={TopResult} />
       <ScatterAxis AllStats={AllStats} TopResult={TopResult} />
+      <Stats key="Full Name" TopResult={TopResult} />
+      <PastFights TopResult={TopResult} FightsData={FightsData} />
       </div>
     )
       

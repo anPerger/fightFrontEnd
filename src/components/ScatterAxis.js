@@ -40,31 +40,32 @@ export default function ScatterAxis(props) {
     let allX = props.AllStats.map(a => a[XAxis]);
     let allY = props.AllStats.map(a => a[YAxis]);
     let names = props.AllStats.map(a => a["Name"]);
-    console.log(typeof(allX))
-    console.log(allX)
-    console.log(allY)
+    // console.log(typeof(allX))
+    // console.log(allX)
+    // console.log(allY)
     let selX = props.TopResult[`${XAxis}`];
-    console.log(selX)
+    // console.log(selX)
     let selY = props.TopResult[`${YAxis}`];
-    console.log(selY)
+    // console.log(selY)
     let selName = props.TopResult["Name"];
     // console.log(selName)
 
     return (
             <div>
-              <h5>Select X Axis:
-                <select onChange={handleXChange}>
-                    <option value="Select X Axis">Select X Axis</option>
-                    {keys.map((key) => <option value={key.value}>{key}</option>)}
-                </select>
-              </h5>
               <h5>Select Y Axis:
               <select onChange={handleYChange}>
                     <option value="Select Y Axis">Select Y Axis</option>
                     {keys.map((key) => <option value={key.value}>{key}</option>)}
                 </select>
               </h5>
-            <ScatterPlot allX={allX} allY={allY} names={names} selX={selX} selY={selY} selName={selName} XAxis={XAxis} YAxis={YAxis}/>
+              <ScatterPlot allX={allX} allY={allY} names={names} selX={selX} selY={selY} selName={selName} XAxis={XAxis} YAxis={YAxis}/>
+              <h5>Select X Axis: 
+                <select onChange={handleXChange}>
+                    <option value="Select X Axis">Select X Axis</option>
+                    {keys.map((key) => <option value={key.value}>{key}</option>)}
+                </select> 
+                
+              </h5>            
             </div>
         )
 }
