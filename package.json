@@ -2,7 +2,7 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anPerger.github.io/fightFrontEnd",
+  "homepage": "https://anPerger.github.io/fightFrontEnd/",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
