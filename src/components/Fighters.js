@@ -1,7 +1,7 @@
 import FuseSearch from "./FuseSearch";
 import React from "react"
 
-export default function SearchBar() {
+export default function Fighters() {
     const [Input, setInput] = React.useState("Charles Oliveira")
 
     function handleSearch() {
