@@ -8,19 +8,18 @@ export default function Fighters() {
         setInput(document.getElementById('selectedFighter').value)
     }
     console.log(Input)
-    // Input.addEventListener("keyup", function(event) {
-    //     // Number 13 is the "Enter" key on the keyboard
-    //     if (event.keyCode === 13) {
-    //       // Cancel the default action, if needed
-    //       event.preventDefault();
-    //       // Trigger the button element with a click
-    //       document.getElementById("myBtn").click();
-    //     }
-    //   });
+    
+    const handleKeyDown = (event) => {
+          if (event.key === 'Enter') {
+            setInput(document.getElementById('selectedFighter').value)
+          }
+        }
+    
     return (
         <div>
             <div>
-            <input type="text" id="selectedFighter" />
+                <p>Search fighters here</p>
+            <input className="searchBar" type="text" id="selectedFighter" onKeyDown={handleKeyDown} />
             <button id="myBtn" onClick={handleSearch}>Go</button>
             </div>
         <FuseSearch Input={Input} />

@@ -18,6 +18,12 @@ nav{
   list-style: none;
 }
 
+.searchBar {
+  margin-top: 10px;
+  place-items: center;
+
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -43,3 +49,4 @@ h1 a {
 h1 a:hover {
   background-color: rgb(190, 190, 190);
 }
+

@@ -176,9 +176,9 @@ export default function FuseSearch(props) {
    
     return (
       <div>
-      <ScatterAxis AllStats={AllStats} TopResult={TopResult} />
-      <Stats key="Full Name" TopResult={TopResult} />
-      <PastFights TopResult={TopResult} FightsData={FightsData} />
+        <ScatterAxis AllStats={AllStats} TopResult={TopResult} />
+        <Stats key="Full Name" TopResult={TopResult} />
+        <PastFights TopResult={TopResult} FightsData={FightsData} />
       </div>
     )
       
