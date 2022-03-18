@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/fightFrontEnd/static/css/main.4b40ac76.css",
-    "main.js": "/fightFrontEnd/static/js/main.177e7805.js",
+    "main.js": "/fightFrontEnd/static/js/main.b9f4b731.js",
     "static/js/787.b701888c.chunk.js": "/fightFrontEnd/static/js/787.b701888c.chunk.js",
     "static/media/logo.svg": "/fightFrontEnd/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/fightFrontEnd/index.html",
     "main.4b40ac76.css.map": "/fightFrontEnd/static/css/main.4b40ac76.css.map",
-    "main.177e7805.js.map": "/fightFrontEnd/static/js/main.177e7805.js.map",
+    "main.b9f4b731.js.map": "/fightFrontEnd/static/js/main.b9f4b731.js.map",
     "787.b701888c.chunk.js.map": "/fightFrontEnd/static/js/787.b701888c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4b40ac76.css",
-    "static/js/main.177e7805.js"
+    "static/js/main.b9f4b731.js"
   ]
 }
