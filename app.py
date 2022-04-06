@@ -10,7 +10,8 @@ fights = ufc_stats_db["fights"]
 fighters = ufc_stats_db["fighters"]
 events = ufc_stats_db["events"]
 event_fights = ufc_stats_db["event_fights"]
-
+model_results = ufc_stats_db["model_results"]
+model_picks = ufc_stats_db["model_picks"]
 
 fight_cursor = fights.find({})
 fight_list_cur = list(fight_cursor)
@@ -25,6 +26,25 @@ fighter_list_cur = list(fighter_cursor)
 FighterData = dumps(fighter_list_cur, indent = 2)
 with open('src/data/fighterData.json', 'w', encoding='utf-8') as f:
     json.dump(FighterData, f, ensure_ascii=False, indent=4)
+
+eventFights_cursor = event_fights.find({}) 
+eventFights_list_cur = list(eventFights_cursor)
+
+EventFightsData = dumps(eventFights_list_cur, indent = 2)
+with open('src/data/EventFights.json', 'w', encoding='utf-8') as f:
+    json.dump(EventFightsData, f, ensure_ascii=False, indent=4)
+
+results_cur = model_results.find({"model_v": "combined"})
+results_list_cur = list(results_cur)
+resultsData = dumps(results_list_cur, indent = 2)
+with open("src/data/model_results.json", "w",  encoding='utf-8') as f:
+    json.dump(resultsData, f, ensure_ascii=False, indent=4)
+
+picks_cur = model_picks.find({})
+picks_list_cur = list(picks_cur)
+picksData = dumps(picks_list_cur, indent = 2)
+with open("src/data/model_picks.json", "w",  encoding='utf-8') as f:
+    json.dump(picksData, f, ensure_ascii=False, indent=4)
 
 FighterStats = []
 for x in range(len(fighter_list_cur)):

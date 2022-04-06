@@ -2,7 +2,7 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://anPerger.github.io/fightFrontEnd/home",
+  "homepage": "https://anPerger.github.io/",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -16,6 +16,7 @@
     "ajv": "^8.10.0",
     "buffer": "^6.0.3",
     "fuse.js": "^6.5.3",
+    "jquery-csv": "^1.0.21",
     "plotly.js": "^1.45.3",
     "react": "^17.0.2",
     "react-accessible-accordion": "^4.0.0",
@@ -26,6 +27,7 @@
     "react-plotly.js": "^2.5.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "semantic-ui-react": "^2.1.2",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },

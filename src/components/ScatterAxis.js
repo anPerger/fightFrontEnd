@@ -52,20 +52,25 @@ export default function ScatterAxis(props) {
 
     return (
             <div>
+              <span className="Scatter">
+              <span className="Yselect">
               <h5>Select Y Axis:
               <select onChange={handleYChange}>
                     <option value="Select Y Axis">Select Y Axis</option>
                     {keys.map((key) => <option value={key.value}>{key}</option>)}
-                </select>
+                </select> 
               </h5>
+              </span>
               <ScatterPlot allX={allX} allY={allY} names={names} selX={selX} selY={selY} selName={selName} XAxis={XAxis} YAxis={YAxis}/>
+              </span>
+              <span className="Xselect">
               <h5>Select X Axis: 
                 <select onChange={handleXChange}>
-                    <option value="Select X Axis">Select X Axis</option>
+                <option value="Select X Axis">Select X Axis</option>
                     {keys.map((key) => <option value={key.value}>{key}</option>)}
                 </select> 
-                
-              </h5>            
+              </h5>  
+              </span>         
             </div>
         )
 }

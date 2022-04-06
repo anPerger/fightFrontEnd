@@ -20,11 +20,9 @@ const AccordionSection = styled.div`
 const Container = styled.div`
   position: absolute;
   top: 30%;
-  box-shaddow: 2px 10px 35px 1px rgba(153, 153, 153, 0.3);
   `;
 const Wrap = styled.div`
-  background: #272727;
-  color: #fff;
+  background: lightgray; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,10 +36,41 @@ const Wrap = styled.div`
   }`;
 const Dropdown = styled.div`
 `;
+
 export default function PastFightsAccordion(props) {
+
+  
   const newArr = props.SelectedFights.map(({_id, ...rest}) => {
     return rest;
   });
+  let FightStats = {
+    "TopLine":{
+      "Winner": newArr.winner,
+      "Winning Method": newArr.method,
+      "Round End": newArr.red_RndEnd,
+      "Total Fight Seconds": newArr.red_FightSec,
+      "Weight Class": newArr.weight_class,
+      "Rounds": newArr.rounds,
+      "Title Fight": newArr.title_fight,
+      "Stance Matchup": newArr.stance_matchup,
+      "Event": newArr.event,
+      "Date": newArr.date,
+      "Location": newArr.location,
+      "FightID": newArr.fight_id
+    },
+    
+    "Red": {
+    "Red Name": newArr.red_name,
+    "Red KDs": newArr.red_KDs,
+    "Red Sub Attempts": newArr.red_SubAtts,
+    },
+    
+    "Blue": {
+      "Blue Name": newArr.blue_name,
+      "Blue KDs": newArr.blue_KDs
+    }
+
+  }
 
   const [Clicked, setClicked] = useState(false)
 
@@ -53,19 +82,24 @@ export default function PastFightsAccordion(props) {
   }
 
   return (
-    <IconContext.Provider value={{color: '#00FFB9', size: '25px'}}>
+    <span className="PastAccordion">
+    <IconContext.Provider value={{color: 'green', size: '25px'}}>
     <AccordionSection>
       <Container>
         {newArr.map((item, index) => {
           return (
             <>
+            
             <Wrap onClick={() => toggle(index)} key={index}>
             <h1>{item.fight_id}</h1>
             <span>{Clicked === index ? <FiMinus /> : <FiPlus />}</span>
             </Wrap>
             {Clicked === index ? (
             <Dropdown>
-            <p>{Object.entries(item).map(([key, value]) =>
+            <p>
+              
+              
+              {Object.entries(item).map(([key, value]) =>
              <li>{key} : {value}</li>)}</p>
              </Dropdown>
              ) : null}
@@ -75,58 +109,6 @@ export default function PastFightsAccordion(props) {
       </Container>
     </AccordionSection>
     </IconContext.Provider>
+    </span>
   )
-
-
-
-
-  
-  // delete props.SelectedFights[1]["_id"]
-  // console.log(typeof(props.SelectedFights[1]))
-  // let FightList = []
-  // for(const fight in props.SelectedFights) {
-  //   delete fight["_id"]
-  //   let FightData = Object.entries(fight).map(([key, value]) =>
-  //   <li>{key}: {value}</li>
-  //   )
-  //   let acc = (
-  //     <Accordion>
-  //         <AccordionSummary
-  //           expandIcon={<ExpandMoreIcon />}
-  //           aria-controls="panel1a-content"
-  //           id="panel1a-header"
-  //         >
-  //           <Typography>{FightData.fight_id}</Typography>
-  //         </AccordionSummary>
-  //         <AccordionDetails>
-  //           <Typography>
-  //             {FightData}
-  //           </Typography>
-  //         </AccordionDetails>
-  //       </Accordion>
-  //   )
-    
-  
-  //    }
-    
-  // return (
-  //   <div>
-  //     {/* <Accordion>
-  //       <AccordionSummary
-  //         expandIcon={<ExpandMoreIcon />}
-  //         aria-controls="panel1a-content"
-  //         id="panel1a-header"
-  //       >
-  //         <Typography>Accordion 1</Typography>
-  //       </AccordionSummary>
-  //       <AccordionDetails>
-  //         <Typography>
-  //           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-  //           malesuada lacus ex, sit amet blandit leo lobortis eget.
-  //         </Typography>
-  //       </AccordionDetails>
-  //     </Accordion> */}
-  //     {acc}
-  //   </div>
-  // )
 }
