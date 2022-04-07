@@ -34,14 +34,14 @@ export default function Picks() {
                 <td>{ item.blue_name }</td>
                 <td>{ item.win_pred }</td>
                 <td>{ item.win_method }</td>
-                <td>{ item.red_total_pct }</td>
-                <td>{ item.blue_total_pct }</td>
-                <td>{ item.red_dec_pct }</td>
-                <td>{ item.red_ko_pct }</td>
-                <td>{ item.red_sub_pct }</td>
-                <td>{ item.blue_dec_pct }</td>
-                <td>{ item.blue_ko_pct }</td>
-                <td>{ item.blue_sub_pct }</td>
+                <td>{ Math.round(item.red_total_pct * 100) }</td>
+                <td>{ Math.round(item.blue_total_pct * 100) }</td>
+                <td>{ Math.round(item.red_dec_pct * 100) }</td>
+                <td>{ Math.round(item.red_ko_pct * 100) }</td>
+                <td>{ Math.round(item.red_sub_pct * 100) }</td>
+                <td>{ Math.round(item.blue_dec_pct * 100) }</td>
+                <td>{ Math.round(item.blue_ko_pct * 100) }</td>
+                <td>{ Math.round(item.blue_sub_pct * 100) }</td>
               </tr>
             );
           })}

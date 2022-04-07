@@ -55,16 +55,16 @@ h1 a:hover {
 
 .Scatter {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-left: 75px;
-  margin-bottom: 40px;
+    
 }
 
 .Yselect {
   display: flex;
   place-content: left;
   margin-bottom: 20px;
-  margin-top: 300px;
+  margin-left: 80px;
 }
 
 .Xselect {
@@ -93,13 +93,13 @@ h1 a:hover {
 }
 
 table {
-  margin-left: 60px;
-}
-
+  align-items: center;
+}  
 th, td {
   align-items: center;
+  align-content: center;
   border: 1px solid;
-  padding: 8px;
+  padding: 6px;
 }
 
 

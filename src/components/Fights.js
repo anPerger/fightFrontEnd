@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import FightSearch from './FightSearch';
-import FightSeachAccordion from './FightSearchAccordion';
+import FightSearchAccordion from './FightSearchAccordion';
 
 const fightString = require('../data/fightsData.json');
 const fightObj = JSON.parse(fightString)
@@ -9,6 +9,10 @@ const fightData = fightObj.map(({_id, ...rest}) => {
     return rest;
   });
 
+function custom_sort(a, b) {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+}
+fightData.sort(custom_sort)
 
 const filterPosts = (fightData, query) => {
     if (!query) {
@@ -17,11 +21,11 @@ const filterPosts = (fightData, query) => {
 
     return fightData.filter((fight) => {
         const postName = fight.fight_id.toLowerCase();
-        return postName.includes(query);
+        return postName.includes(query.toLowerCase());
     });
 };
 
-const Events = () => {
+const Fights = () => {
     // console.log(fightData)
     const { search } = window.location;
     const query = new URLSearchParams(search).get('s');
@@ -34,14 +38,9 @@ const Events = () => {
              searchQuery={searchQuery}
              setSearchQuery={setSearchQuery}
              />
-            <FightSeachAccordion filteredPosts={filteredPosts} />
-            {/* <ul>
-            {filteredPosts.map((fight) => (
-                    <li key={fight.fight_id}>{fight.fight_id}</li>
-                ))}         
-            </ul> */}
+            <FightSearchAccordion filteredPosts={filteredPosts} />
         </div>
 )
     
 }
-export default Events
+export default Fights

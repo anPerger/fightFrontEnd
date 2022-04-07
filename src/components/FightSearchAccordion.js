@@ -37,7 +37,7 @@ const Wrap = styled.div`
 const Dropdown = styled.div`
 `;
 
-export default function FightSeachAccordion(props) {
+export default function FightSearchAccordion(props) {
 
   
   const newArr = props.filteredPosts.map(({_id, ...rest}) => {

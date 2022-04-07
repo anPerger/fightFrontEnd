@@ -1,5 +1,5 @@
 const FightSearch = ({ searchQuery, setSearchQuery }) => (
-    <form action="/fights" method="get">
+    <form action="/fightFrontEnd/#/fights" method="get">
         <label htmlFor="header-search">
             <span className="visually-hidden">Search Fights</span>
         </label>

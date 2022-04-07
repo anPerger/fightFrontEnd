@@ -17,8 +17,11 @@ export default function PastFights(props) {
             }
 
     
-    console.log(SelectedFights)
-    
+    // console.log(SelectedFights)
+    function custom_sort(a, b) {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    }
+    SelectedFights.sort(custom_sort)
     // let allFights = []
     // for(const blah in selectedFights) {
     //     for(const bluh in blah) {
