@@ -7,6 +7,7 @@ import React, { Component, useState } from 'react';
 import styled from 'styled-components'
 import { IconContext } from 'react-icons'
 import { FiPlus, FiMinus } from 'react-icons/fi'
+import { DriveEtaOutlined } from '@mui/icons-material';
 
 
 const AccordionSection = styled.div`
@@ -43,6 +44,7 @@ export default function FightSearchAccordion(props) {
   const newArr = props.filteredPosts.map(({_id, ...rest}) => {
     return rest;
   });
+  console.log(newArr)
   let FightStats = {
     "TopLine":{
       "Winner": newArr.winner,
@@ -96,9 +98,35 @@ export default function FightSearchAccordion(props) {
             </Wrap>
             {Clicked === index ? (
             <Dropdown>
-            <p>              
-              {Object.entries(item).map(([key, value]) =>
-             <li>{key} : {value}</li>)}</p>
+              <div>
+                <span className='fightStats'>
+                  <li>Winner: {item.winner}</li>
+                  <li>Method: {item.method}</li>
+                  <li>Weight Class: {item.weight_class}</li>
+                  <li>Stance Matchup: {item.stance_matchup}</li>
+                  <li>Rounds: {item.rounds}</li>
+                  <li>Title Fight: {item.title_fight}</li>
+                  <li>Round End: {item.red_RndEnd}</li>
+                  <li>Total Fight Seconds: {item.red_FightSec}</li>
+                  <li>Event: {item.event}</li>
+                  <li>Date: {item.date}</li>
+                  <li>Location: {item.location}</li>
+                </span>
+                <div className='colorStats'>
+                  <div className='redStats'>
+                    <li>Red Name: {item.red_name}</li>
+                    <li>Red KDs: {item.red_KDs}</li>
+                  </div>
+                  <div className='blueStats'>
+                    <li>Blue Name: {item.blue_name}</li>
+                    <li>Blue KDs: {item.blue_KDs}</li>
+                  </div>
+                </div>
+              </div>
+
+
+            {/* <p>{Object.entries(item).map(([key, value]) =>
+             <li>{key} : {value}</li>)}</p> */}
              </Dropdown>
              ) : null}
             </>
